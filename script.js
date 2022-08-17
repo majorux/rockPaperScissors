@@ -5,13 +5,11 @@ function getComputerChoice() {
 }
 
 function getPlayerSelection(){
-  let answer = prompt("enter choice");
+  let answer = prompt("A game of Rock Paper Scissors! \n Enter choice");
   let choice = answer.toLowerCase();
   return choice
 }
 
-const playerSeletion = getPlayerSelection();
-const computerSelection =  getComputerChoice();
 const choices = ["rock", "paper", "scissors"];
 
 function compare(choiceA, choiceB){
@@ -35,17 +33,33 @@ function compare(choiceA, choiceB){
     return "wrong input"
   }
 }
+let playerScore = 0
+let computerScore = 0
 
 function playround(player, computer){
   if (compare(player, computer) === player){
-    console.log("you win, " + playerSeletion + " beats " + computerSelection)
-  } else if (compare(playerSeletion,computerSelection) == "draw"){
+    playerScore += 1;
+    console.log("you win, " + player + " beats " + computer + " ." + "Current score: " + playerScore + "|" + computerScore)
+  } else if (compare(player,computer) == "draw"){
     console.log("its a draw")
   } else if (compare(player, computer) === computer){
-    console.log("you lose, " + computerSelection + " beats " + playerSeletion)
+    computerScore += 1;
+    console.log("you lose, " + computer + " beats " + player + " ." + "Current score: " + playerScore + "|" + computerScore)
   } else {
     return "something went wrong"
   }
 }
-playround(playerSeletion, computerSelection)
-console.log(playerSeletion, computerSelection)
+
+function game(){
+  for(let i = 0; i < 5; i++){
+    playround(getPlayerSelection(), getComputerChoice())
+  }
+  if (playerScore > computerScore){
+    console.log("You won! " + playerScore + ": " + computerScore)
+  } else if (playerScore === computerScore){
+    console.log("it's a Draw! " + playerScore + ":" + computerScore)
+  } else {
+    console.log("You lost! " + playerScore + ":" + computerScore)
+  }
+}
+game()
