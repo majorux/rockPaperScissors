@@ -48,7 +48,9 @@ function playround(player, computer){
   } else {
     return "something went wrong"
   }
-}
+};
+
+
 
 //function game(){
 //for(let i = 0; i < 5; i++){
