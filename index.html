@@ -6,9 +6,12 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <button class = "rock">rock</button>
-    <button class = "paper">paper</button>
-    <button class = "scissors">scissors</button>
+    <p>Play a game of Rock Paper Scissors. Five rounds decides the winner.</p>
+    <div class="bottons">
+      <button class = "rock">rock</button>
+      <button class = "paper">paper</button>
+      <button class = "scissors">scissors</button>
+    </div>
   </body>
   <style>
     body{
@@ -16,12 +19,24 @@
       justify-content: center;
       align-items: center;
       background-color: black;
+      flex-direction: column;
+    }
+    p{
+      color: antiquewhite;
+      padding: 40px;
+      font-size: large;
+      font-weight: 900;
     }
     button{
       display: flex;
+      display: inline-block;
+      text-align: center;
+      width: 80px;
       margin: 30px;
       padding: 20px;
+      border: rgb(232, 255, 24);
       background-color: rgb(232, 255, 24);
+      flex: 0 0;
     }
   </style>
 </html>
