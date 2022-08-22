@@ -50,16 +50,16 @@ function playround(player, computer){
   }
 }
 
-function game(){
-  for(let i = 0; i < 5; i++){
-    playround(getPlayerSelection(), getComputerChoice())
-  }
-  if (playerScore > computerScore){
-    console.log("You won! " + playerScore + ": " + computerScore)
-  } else if (playerScore === computerScore){
-    console.log("it's a Draw! " + playerScore + ":" + computerScore)
-  } else {
-    console.log("You lost! " + playerScore + ":" + computerScore)
-  }
-}
-game()
+//function game(){
+//for(let i = 0; i < 5; i++){
+//playround(getPlayerSelection(), getComputerChoice())
+//}
+//if (playerScore > computerScore){
+//console.log("You won! " + playerScore + ": " + computerScore)
+//} else if (playerScore === computerScore){
+//console.log("it's a Draw! " + playerScore + ":" + computerScore)
+//} else {
+//console.log("You lost! " + playerScore + ":" + computerScore)
+//}
+//}
+//game()
