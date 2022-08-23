@@ -68,8 +68,21 @@ window.addEventListener('click', function(e){
     p.remove()
   }
   body.append(text)
+  
+  const box = e.srcElement;
+  if(box.className == "scissors" | box.className == "rock" |box.className == "paper"){
+    box.classList.add('click');
+  }
 });
+function removeTransition(e){
+  if(e.propertyName !== "transform") return;
+  this.classList.remove('click');
+}
 
+
+const button = document.querySelector('button')
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition))
 
 
 
