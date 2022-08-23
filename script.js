@@ -83,19 +83,3 @@ function removeTransition(e){
 const button = document.querySelector('button')
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition))
-
-
-
-//function game(){
-//for(let i = 0; i < 5; i++){
-//playround(getPlayerSelection(), getComputerChoice())
-//}
-//if (playerScore > computerScore){
-//console.log("You won! " + playerScore + ": " + computerScore)
-//} else if (playerScore === computerScore){
-//console.log("it's a Draw! " + playerScore + ":" + computerScore)
-//} else {
-//console.log("You lost! " + playerScore + ":" + computerScore)
-//}
-//}
-//game()
