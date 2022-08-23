@@ -44,6 +44,16 @@ function playround(player, computer){
   } else {
     return "something went wrong"
   }
+  if(computerScore == 5){
+    output = "Game Over! You lost the match. "  + "PLAYER:" + playerScore + "| " + "COMPUTER:" + computerScore;
+    computerScore = 0;
+    playerScore = 0;
+  } else if(playerScore == 5){
+    output = "Game Over! You won the match. "  + "PLAYER:" + playerScore + "| " + "COMPUTER:" + computerScore;
+    playerScore = 0;
+    computerScore = 0;
+  }
+
 };
 
 window.addEventListener('click', function(e){
