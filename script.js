@@ -55,7 +55,7 @@ window.addEventListener('click', function(e){
   text.innerText = (output);
   if(document.querySelector('p')){
     const p = this.document.querySelector('p');
-    p.remove(p)
+    p.remove()
   }
   body.append(text)
 });
