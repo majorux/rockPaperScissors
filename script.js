@@ -3,12 +3,7 @@ function getComputerChoice() {
   randomElement = choice[Math.floor(Math.random() * choice.length)];
   return randomElement
 }
-
-function getPlayerSelection(){
-  let answer = prompt("A game of Rock Paper Scissors! \n Enter choice");
-  let choice = answer.toLowerCase();
-  return choice
-}
+let getPlayerSelection;
 
 const choices = ["rock", "paper", "scissors"];
 
@@ -33,22 +28,38 @@ function compare(choiceA, choiceB){
     return "wrong input"
   }
 }
-let playerScore = 0
-let computerScore = 0
+let playerScore = 0;
+let computerScore = 0;
+let output = "";
 
 function playround(player, computer){
   if (compare(player, computer) === player){
     playerScore += 1;
-    console.log("you win, " + player + " beats " + computer + " ." + "Current score: " + playerScore + "|" + computerScore)
-  } else if (compare(player,computer) == "draw"){
-    console.log("its a draw")
+    output = "you win, " + player + " beats " + computer + ". " + "Current score: " + playerScore + "|" + computerScore;
+    } else if (compare(player,computer) == "draw"){
+    output = "its a draw. " + "Current score: " + playerScore + "|" + computerScore;
   } else if (compare(player, computer) === computer){
     computerScore += 1;
-    console.log("you lose, " + computer + " beats " + player + " ." + "Current score: " + playerScore + "|" + computerScore)
+    output = "you lose, " + computer + " beats " + player + ". " + "Current score: " + playerScore + "|" + computerScore;
   } else {
     return "something went wrong"
   }
 };
+
+window.addEventListener('click', function(e){
+  const getPlayerSelection = e.srcElement.className;
+  playround(getPlayerSelection, getComputerChoice());
+
+  const body = document.querySelector('body');
+  const text = document.createElement('p');
+  text.innerText = (output);
+  if(document.querySelector('p')){
+    const p = this.document.querySelector('p');
+    p.remove(p)
+  }
+  body.append(text)
+});
+
 
 
 

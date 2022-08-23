@@ -6,10 +6,10 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <p>Play a game of Rock Paper Scissors. Five rounds decides the winner.</p>
+    <div class="welcome">Play a game of Rock Paper Scissors. Five rounds decides the winner.</div>
     <div class="bottons">
-      <button class = "rock">rock</button>
-      <button class = "paper">paper</button>
+      <button class= "rock">rock</button>
+      <button class= "paper">paper</button>
       <button class = "scissors">scissors</button>
     </div>
   </body>
@@ -21,7 +21,7 @@
       background-color: black;
       flex-direction: column;
     }
-    p{
+    .welcome{
       color: antiquewhite;
       padding: 40px;
       font-size: large;
@@ -37,6 +37,15 @@
       border: rgb(232, 255, 24);
       background-color: rgb(232, 255, 24);
       flex: 0 0;
+    }
+    p{
+      color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: large;
+      font-weight: 900;
+      font-style: italic;
     }
   </style>
 </html>
